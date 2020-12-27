@@ -26,7 +26,9 @@ app.get('/', (req, res) => {
 })
 app.use(express.static(__dirname + '/public'));
 
-
+app.post('/name', (req, res) =>{
+    res.send(req.body)
+})
 
 
 
