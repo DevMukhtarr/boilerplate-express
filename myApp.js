@@ -15,13 +15,14 @@ const mongoose = require('mongoose');
 //     let lastName = req.query.last;
 //     // Use template literals to form a formatted string
 //     res.json({
-//       name: `${firstName} ${lastName}`
-//     });
-//   });
-  
-// bodyParser.urlencoded({extended: false})
-// app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+    //       name: `${firstName} ${lastName}`
+    //     });
+    //   });
+    
+    // bodyParser.urlencoded({extended: false})
+    // app.use(bodyParser.urlencoded({ extended: false }))
+    app.use(bodyParser.json())
+    mongoose.connect(process.env.MONGO_URI)
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
@@ -36,7 +37,6 @@ app.get('/secret', (req, res) =>{
     res.send({"secret":process.env.MONGO_URI})
     console.log(process.env.MONGO_URI)
 })
-mongoose.connect(process.env.MONGO_URI)
 
 
 
