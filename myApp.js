@@ -32,7 +32,7 @@ app.post('/name',bodyParser.urlencoded({ extended: false }), (req, res) =>{
     res.json({"name": value})
 })
 app.get('/secret', (req, res) =>{
-    res.send(process.env.MONGO_URI)
+    res.send({"secret":process.env.MONGO_URI})
 })
 mongoose
 .connect(process.env.MONGO_URI, 
