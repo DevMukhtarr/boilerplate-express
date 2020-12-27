@@ -1,5 +1,6 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+let bodyParser = require('body-parser');
 
 
 // app.get('/name', (req, res) => {
@@ -7,15 +8,18 @@ var app = express();
 // })
 
 
-app.get("/name", function(req, res) {
-    var firstName = req.query.first;
-    var lastName = req.query.last;
-    // Use template literals to form a formatted string
-    res.json({
-      name: `${firstName} ${lastName}`
-    });
-  });
+// app.get("/name", function(req, res) {
+//     let firstName = req.query.first;
+//     let lastName = req.query.last;
+//     // Use template literals to form a formatted string
+//     res.json({
+//       name: `${firstName} ${lastName}`
+//     });
+//   });
   
+// bodyParser.urlencoded({extended: false})
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 
 
