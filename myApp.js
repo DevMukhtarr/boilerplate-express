@@ -18,7 +18,7 @@ let bodyParser = require('body-parser');
 //   });
   
 // bodyParser.urlencoded({extended: false})
-app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
@@ -26,8 +26,8 @@ app.get('/', (req, res) => {
 })
 app.use(express.static(__dirname + '/public'));
 
-app.post('/name', (req, res) =>{
-    let value = req.body.first + " " +req.body.last
+app.post('/name',bodyParser.urlencoded({ extended: false }), (req, res) =>{
+    let value = req.body.first + " " + req.body.last
     res.json({"name": value})
 })
 
