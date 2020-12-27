@@ -34,8 +34,8 @@ app.post('/name',bodyParser.urlencoded({ extended: false }), (req, res) =>{
     res.json({"name": value})
 })
 app.get('/secret', (req, res) =>{
-    res.send({"secret":process.env.MONGO_URI})
-    console.log(process.env.MONGO_URI)
+    res.send({"secret":process.sample.env.MONGO_URI})
+    console.log(process.sample.env.MONGO_URI)
 })
 
 
