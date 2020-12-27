@@ -36,9 +36,7 @@ app.get('/secret', (req, res) =>{
     res.send({"secret":process.env.MONGO_URI})
     console.log(process.env.MONGO_URI)
 })
-mongoose
-.connect(process.env.MONGO_URI, 
-    { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_URI)
 
 
 
