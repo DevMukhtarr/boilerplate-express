@@ -27,7 +27,8 @@ app.get('/', (req, res) => {
 app.use(express.static(__dirname + '/public'));
 
 app.post('/name', (req, res) =>{
-    res.send(req.body)
+    let value = req.body.first + " " +req.body.last
+    res.json({"name": value})
 })
 
 
